@@ -93,11 +93,11 @@ class OpenPlumesAlgorithm(QgsProcessingAlgorithm):
                 'SAMPLE_POSITION',
                 self.tr('Representative sample position'),
                 options=[
-                    'Screen midpoint',
                     'Screen top',
+                    'Screen midpoint',
                     'Screen bottom'
                 ],
-                defaultValue=0
+                defaultValue=1
             )
         )    
          
