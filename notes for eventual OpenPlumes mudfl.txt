@@ -1,0 +1,6 @@
+notes for eventual OpenPlumes mudflow integration
+
+- be able to run modflow for plume related tasks?
+- be able to train models of of modflow to emulate?
+	- think not for spatial but temporal aspects too. Modflow is king when it comes to where, when, and 		how much. Can we use learning algorithms with temporal capabilities? (think implicit 			modeling for a temporal question). If implicit rbf is good enough for consulting can 			implicit ML etc. be good enough for them as well? could be an interesting research 			question.
+
