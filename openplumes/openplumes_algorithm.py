@@ -120,6 +120,39 @@ class OpenPlumesAlgorithm(QgsProcessingAlgorithm):
         # to uniquely identify the feature sink, and must be included in the
         # dictionary returned by the processAlgorithm function.
         source = self.parameterAsSource(parameters, self.INPUT, context)
+
+
+        contaminant = self.parameterAsString(
+            parameters,
+            'CONTAMINANT_ATTRIBUTE',
+            context
+        )
+
+        screen_top_attribute = self.parameterAsString(
+            parameters,
+            'SCREEN_TOP_ATTRIBUTE',
+            context
+        )
+
+        screen_bottom_attribute = self.parameterAsString(
+            parameters,
+            'SCREEN_BOTTOM_ATTRIBUTE',
+            context
+        )
+
+        sample_position = self.parameterAsEnum(
+            parameters,
+            'SAMPLE_POSITION',
+            context
+        )
+
+        feedback.pushInfo(f'Contaminant: {contaminant}')
+        feedback.pushInfo(f'Screen top attribute: {screen_top_attribute}')
+        feedback.pushInfo(f'Screen bottom attribute: {screen_bottom_attribute}')
+        feedback.pushInfo(f'Sample position index: {sample_position}')
+
+
+
         (sink, dest_id) = self.parameterAsSink(parameters, self.OUTPUT,
                 context, source.fields(), source.wkbType(), source.sourceCrs())
 
@@ -132,6 +165,18 @@ class OpenPlumesAlgorithm(QgsProcessingAlgorithm):
             # Stop the algorithm if cancel button has been clicked
             if feedback.isCanceled():
                 break
+            screen_top = feature[screen_top_attribute]
+            screen_bottom = feature[screen_bottom_attribute]
+            concentration = feature[contaminant]            
+
+            if sample_position == 0:
+                sample_elevation = screen_top
+
+            elif sample_position == 1:
+                sample_elevation = (screen_top + screen_bottom) / 2
+
+            elif sample_position == 2:
+                sample_elevation = screen_bottom
 
             # Add a feature in the sink
             sink.addFeature(feature, QgsFeatureSink.FastInsert)
