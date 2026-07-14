@@ -168,12 +168,12 @@ class OpenPlumesAlgorithm(QgsProcessingAlgorithm):
             if feedback.isCanceled():
                 break
            
-            elevation = feature["Elevation"]
+            elevation = feature["Z"]
             depth = feature["Depth"]
 
             sample_elevation = elevation - depth
             concentration = feature[contaminant]
-            
+
             interpolation_points.append (
                 (
                 feature.geometry().asPoint().x(),
