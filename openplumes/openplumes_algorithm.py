@@ -161,22 +161,27 @@ class OpenPlumesAlgorithm(QgsProcessingAlgorithm):
         total = 100.0 / source.featureCount() if source.featureCount() else 0
         features = source.getFeatures()
 
+        interpolation_points = []
+        
         for current, feature in enumerate(features):
             # Stop the algorithm if cancel button has been clicked
             if feedback.isCanceled():
                 break
-            screen_top = feature[screen_top_attribute]
-            screen_bottom = feature[screen_bottom_attribute]
-            concentration = feature[contaminant]            
+           
+            elevation = feature["Elevation"]
+            depth = feature["Depth"]
 
-            if sample_position == 0:
-                sample_elevation = screen_top
-
-            elif sample_position == 1:
-                sample_elevation = (screen_top + screen_bottom) / 2
-
-            elif sample_position == 2:
-                sample_elevation = screen_bottom
+            sample_elevation = elevation - depth
+            concentration = feature[contaminant]
+            
+            interpolation_points.append (
+                (
+                feature.geometry().asPoint().x(),
+                feature.geometry().asPoint().y(),
+                sample_elevation,
+                concentration
+                )
+            )
 
             # Add a feature in the sink
             sink.addFeature(feature, QgsFeatureSink.FastInsert)
