@@ -39,6 +39,7 @@ from qgis.core import (QgsProcessing,
                        QgsProcessingParameterEnum,
                        QgsProcessingParameterExtent)
 
+from numpy import np
 
 class OpenPlumesAlgorithm(QgsProcessingAlgorithm):
     """
@@ -104,8 +105,8 @@ class OpenPlumesAlgorithm(QgsProcessingAlgorithm):
         
         self.addParameter(
             QgsProcessingParameterExtent(
-                'MODEL_DOMAIN',
-                self.tr('Model domain')
+                'MODEL_BOUNDARY',
+                self.tr('Model boundary')
             )
         )
 
@@ -154,12 +155,20 @@ class OpenPlumesAlgorithm(QgsProcessingAlgorithm):
             'SAMPLE_POSITION',
             context
         )
+        
+        model_extent = self.parameterAsExtent(
+            parameters,
+            'MODEL_BOUNDARY',
+            context
+        )
+
 
         feedback.pushInfo(f'Contaminant: {contaminant}')
         feedback.pushInfo(f'Screen top attribute: {screen_top_attribute}')
         feedback.pushInfo(f'Screen bottom attribute: {screen_bottom_attribute}')
         feedback.pushInfo(f'Sample position index: {sample_position}')
-
+        feedback.pushInfo(f'Model boundary: {model_extent}')
+        
 
 
         (sink, dest_id) = self.parameterAsSink(parameters, self.OUTPUT,
