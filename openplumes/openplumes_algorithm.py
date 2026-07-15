@@ -36,7 +36,8 @@ from qgis.core import (QgsProcessing,
                        QgsProcessingAlgorithm,
                        QgsProcessingParameterFeatureSource,
                        QgsProcessingParameterFeatureSink,QgsProcessingParameterField,
-                       QgsProcessingParameterEnum)
+                       QgsProcessingParameterEnum,
+                       QgsProcessingParameterExtent)
 
 
 class OpenPlumesAlgorithm(QgsProcessingAlgorithm):
@@ -100,7 +101,15 @@ class OpenPlumesAlgorithm(QgsProcessingAlgorithm):
                 defaultValue=1
             )
         )    
-         
+        
+        self.addParameter(
+            QgsProcessingParameterExtent(
+                'MODEL_DOMAIN',
+                self.tr('Model domain')
+            )
+        )
+
+
         # We add a feature sink in which to store our processed features (this
         # usually takes the form of a newly created vector layer when the
         # algorithm is run in QGIS).
