@@ -201,6 +201,8 @@ class OpenPlumesAlgorithm(QgsProcessingAlgorithm):
                 )
             )
 
+        sample_data = np.array(interpolation_points)
+
             # Add a feature in the sink
             sink.addFeature(feature, QgsFeatureSink.FastInsert)
 
