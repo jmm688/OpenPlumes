@@ -39,7 +39,7 @@ from qgis.core import (QgsProcessing,
                        QgsProcessingParameterEnum,
                        QgsProcessingParameterExtent)
 
-from numpy import np
+import numpy as np
 
 class OpenPlumesAlgorithm(QgsProcessingAlgorithm):
     """
