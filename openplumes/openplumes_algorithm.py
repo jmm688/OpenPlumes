@@ -215,12 +215,16 @@ class OpenPlumesAlgorithm(QgsProcessingAlgorithm):
             z_bottom:z_top:100j
             ]
         
+        feedback.pushInfo(f"Sample data: {sample_data.shape}")
+        feedback.pushInfo(f"Grid X: {grid_x.shape}")
+        feedback.pushInfo(f"Grid Y: {grid_y.shape}")
+        feedback.pushInfo(f"Grid Z: {grid_z.shape}")
 
-            # Add a feature in the sink
-            sink.addFeature(feature, QgsFeatureSink.FastInsert)
+        # Add a feature in the sink
+        sink.addFeature(feature, QgsFeatureSink.FastInsert)
 
-            # Update the progress bar
-            feedback.setProgress(int(current * total))
+        # Update the progress bar
+        feedback.setProgress(int(current * total))
 
         # Return the results of the algorithm. In this case our only result is
         # the feature sink which contains the processed features, but some
