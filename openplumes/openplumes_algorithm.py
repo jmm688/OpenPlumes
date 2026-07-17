@@ -205,7 +205,15 @@ class OpenPlumesAlgorithm(QgsProcessingAlgorithm):
 
         ### building the interpolation grid based on the model boundary
         x_min, y_min, x_max, y_max = model_extent.xMinimum(), model_extent.yMinimum(), model_extent.xMaximum(), model_extent.yMaximum()
-        grid_x, grid_y = np.mgrid[x_min:x_max:100j, y_min:y_max:100j]
+        
+        z_top = 100
+        z_bottom = 0
+
+        grid_x, grid_y = np.mgrid[
+            x_min:x_max:100j, 
+            y_min:y_max:100j,
+            z_bottom:z_top:100j
+            ]
         
 
             # Add a feature in the sink
