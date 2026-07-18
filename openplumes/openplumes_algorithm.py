@@ -236,6 +236,9 @@ class OpenPlumesAlgorithm(QgsProcessingAlgorithm):
 
 
         feedback.pushInfo(f"prediction points: {prediction_points.shape}")
+        predicted_values = rbf(prediction_points)
+        concentration_volume = predicted_values.reshape(grid_x.shape)
+
         # Add a feature in the sink
         sink.addFeature(feature, QgsFeatureSink.FastInsert)
 
