@@ -40,6 +40,7 @@ from qgis.core import (QgsProcessing,
                        QgsProcessingParameterExtent)
 
 import numpy as np
+from scipy.interpolate import RbfInterpolator
 
 class OpenPlumesAlgorithm(QgsProcessingAlgorithm):
     """
@@ -227,6 +228,12 @@ class OpenPlumesAlgorithm(QgsProcessingAlgorithm):
                 grid_z.reshape(-1)
             )
         )
+
+        rbf = rbfInterpolator(
+            sample_data[:, :3],
+            sample_data[:, -1], 
+            kernel='linear')
+
 
         feedback.pushInfo(f"prediction points: {prediction_points.shape}")
         # Add a feature in the sink
