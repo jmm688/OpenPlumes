@@ -210,16 +210,25 @@ class OpenPlumesAlgorithm(QgsProcessingAlgorithm):
         z_bottom = 0
 
         grid_x, grid_y = np.mgrid[
-            x_min:x_max:100j, 
-            y_min:y_max:100j,
-            z_bottom:z_top:100j
+            x_min:x_max:20j, 
+            y_min:y_max:20j,
+            z_bottom:z_top:20j
             ]
         
         feedback.pushInfo(f"Sample data: {sample_data.shape}")
         feedback.pushInfo(f"Grid X: {grid_x.shape}")
         feedback.pushInfo(f"Grid Y: {grid_y.shape}")
         feedback.pushInfo(f"Grid Z: {grid_z.shape}")
+        
+        prediction_points = np.column_stack(
+            (
+                grid_x.reshape(-1),
+                grid_y.reshape(-1),
+                grid_z.reshape(-1)
+            )
+        )
 
+        feedback.pushInfo(f"prediction points: {prediction_points.shape}")
         # Add a feature in the sink
         sink.addFeature(feature, QgsFeatureSink.FastInsert)
 
