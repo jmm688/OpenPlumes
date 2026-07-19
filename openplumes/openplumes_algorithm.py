@@ -40,7 +40,7 @@ from qgis.core import (QgsProcessing,
                        QgsProcessingParameterExtent)
 
 import numpy as np
-from scipy.interpolate import RbfInterpolator
+from scipy.interpolate import RBFInterpolator
 
 class OpenPlumesAlgorithm(QgsProcessingAlgorithm):
     """
@@ -229,7 +229,7 @@ class OpenPlumesAlgorithm(QgsProcessingAlgorithm):
             )
         )
 
-        rbf = rbfInterpolator(
+        rbf = RBFInterpolator(
             sample_data[:, :3],
             sample_data[:, -1], 
             kernel='linear')
