@@ -1,2 +1,2 @@
 # OpenPlumes
-An extensible QGIS interface for environmental plume modeling.
+OpenPlumes is an open-source platform for probabilistic groundwater plume modeling.
