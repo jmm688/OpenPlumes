@@ -179,12 +179,20 @@ class OpenPlumesAlgorithm(QgsProcessingAlgorithm):
             context
         )
 
+        model_interpolator = self.parameterAsEnum(
+            parameters,
+            'INTERPOLATOR',
+            context
+        )
+
+
 
         feedback.pushInfo(f'Contaminant: {contaminant}')
         feedback.pushInfo(f'Screen top attribute: {screen_top_attribute}')
         feedback.pushInfo(f'Screen bottom attribute: {screen_bottom_attribute}')
         feedback.pushInfo(f'Sample position index: {sample_position}')
         feedback.pushInfo(f'Model boundary: {model_extent}')
+        feedback.pushInfo(f'Interpolator: {model_interpolator}')
         
 
 
