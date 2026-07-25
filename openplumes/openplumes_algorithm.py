@@ -103,6 +103,22 @@ class OpenPlumesAlgorithm(QgsProcessingAlgorithm):
                 defaultValue=1
             )
         )    
+
+
+        self.addParameter(
+            QgsProcessingParameterEnum(
+                'INTERPOLATOR',
+                self.tr('Interpolator'),
+                options=[
+                    'RBF (Radial Basis Function)',
+                    'Kriging',
+                    'IDW (Inverse Distance Weighting)'
+                ],
+                defaultValue=1
+            )
+        )
+
+
         
         self.addParameter(
             QgsProcessingParameterExtent(
