@@ -29,6 +29,12 @@ from qgis.core import (
     QgsProcessingParameterFeatureSource,
     QgsProcessingParameterField,
     QgsProcessingParameterNumber,
+    QgsLineString,
+    QgsPolygon,
+    QgsCoordinateReferenceSystem,
+    QgsCoordinateTransform,
+    QgsPointXY,
+    QgsProcessingException,
     QgsWkbTypes,
 )
 
@@ -334,6 +340,9 @@ class OpenPlumesAlgorithm(QgsProcessingAlgorithm):
                 "Missing required input fields: " + ", ".join(missing_fields)
             )
 
+        feedback.pushInfo(f"Model extent: {model_extent.toString()}")
+        feedback.pushInfo(f"Input CRS: {source.sourceCrs().authid()}")
+
         interpolation_points = []
         for current, feature in enumerate(source.getFeatures()):
             if feedback.isCanceled():
@@ -455,18 +464,30 @@ class OpenPlumesAlgorithm(QgsProcessingAlgorithm):
 
         for triangle_id, face in enumerate(faces):
             triangle = vertices[face]
+
             ring = [QgsPoint(*point) for point in triangle]
             ring.append(QgsPoint(*triangle[0]))
 
+            polygon = QgsPolygon()
+            polygon.setExteriorRing(QgsLineString(ring))
+
             output_feature = QgsFeature(output_fields)
-            output_feature.setGeometry(QgsGeometry.fromPolygon([ring]))
-            output_feature.setAttributes([triangle_id, iso_value, contaminant])
-            sink.addFeature(output_feature, QgsFeatureSink.FastInsert)
+            output_feature.setGeometry(QgsGeometry(polygon))
+            output_feature.setAttributes([
+                triangle_id,
+                iso_value,
+                contaminant,
+            ])
+
+            sink.addFeature(
+                output_feature,
+                QgsFeatureSink.FastInsert,
+            )
 
             if triangle_id % 250 == 0:
                 feedback.setProgress(
                     80 + int(20 * triangle_id / max(len(faces), 1))
-                )
+                )      
 
         feedback.setProgress(100)
         feedback.pushInfo(f"Isosurface threshold: {iso_value:g}")
