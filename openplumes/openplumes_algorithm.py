@@ -444,8 +444,10 @@ class OpenPlumesAlgorithm(QgsProcessingAlgorithm):
 
         try:
             rbf = RBFInterpolator(
-                sample_data[:, :3], sample_data[:, 3], kernel="thin_plate_spline", neighbors=10
+                sample_data[:, :3], sample_data[:, 3],
+                kernel="thin_plate_spline", neighbors=5
             )
+
             predicted_values = rbf(prediction_points)
         except (ValueError, np.linalg.LinAlgError) as error:
             raise QgsProcessingException(
