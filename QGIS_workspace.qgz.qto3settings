@@ -4,19 +4,15 @@
       "tracks": []
     },
     "layers": {
-      "New_scratch_layer_058e19a4_93fc_474b_ac6b_979a2d9cfc59": {
+      "Plume_shell_triangles_92d347f9_5961_4b8f_a968_a735800502a3": {
         "enabled": true,
         "tracks": []
       },
-      "Plume_shell_triangles_543a3a30_69f1_4624_bdbb_b3505b82c993": {
+      "Plume_shell_triangles_999939da_75a2_4acf_8e21_fbb0f2b3c09c": {
         "enabled": true,
         "tracks": []
       },
-      "Plume_shell_triangles_68037971_f8a0_4bff_97e3_c0c566f7fa13": {
-        "enabled": true,
-        "tracks": []
-      },
-      "Plume_shell_triangles_d32871bd_88e7_4f25_b816_a9059b6d50f3": {
+      "Plume_shell_triangles_c479f9c9_d155_48bf_9404_4e9ddaa4e7db": {
         "enabled": true,
         "tracks": []
       },
@@ -24,7 +20,15 @@
         "enabled": true,
         "tracks": []
       },
+      "new_scratch_layer_9bf15405_4537_4b7e_91fa_073c7a53c170": {
+        "enabled": true,
+        "tracks": []
+      },
       "openplumes_dummy_data_be02db33_d521_4f0b_b9f7_81d6e9869d1e": {
+        "enabled": true,
+        "tracks": []
+      },
+      "test_extent_482037a9_890b_4680_a4e6_833e72489b59": {
         "enabled": true,
         "tracks": []
       }
@@ -34,7 +38,7 @@
   "LAYERS": [
     {
       "geomType": 3,
-      "layerId": "Plume_shell_triangles_543a3a30_69f1_4624_bdbb_b3505b82c993",
+      "layerId": "Plume_shell_triangles_c479f9c9_d155_48bf_9404_4e9ddaa4e7db",
       "name": "Plume shell triangles",
       "properties": {
         "checkBox_Clickable": true,
@@ -117,7 +121,7 @@
     },
     {
       "geomType": 3,
-      "layerId": "Plume_shell_triangles_d32871bd_88e7_4f25_b816_a9059b6d50f3",
+      "layerId": "Plume_shell_triangles_92d347f9_5961_4b8f_a968_a735800502a3",
       "name": "Plume shell triangles",
       "properties": {
         "checkBox_Clickable": true,
@@ -200,8 +204,174 @@
     },
     {
       "geomType": 3,
-      "layerId": "New_scratch_layer_058e19a4_93fc_474b_ac6b_979a2d9cfc59",
-      "name": "New scratch layer",
+      "layerId": "test_extent_482037a9_890b_4680_a4e6_833e72489b59",
+      "name": "test extent",
+      "properties": {
+        "checkBox_Clickable": true,
+        "checkBox_Clip": true,
+        "checkBox_ExportAttrs": false,
+        "checkBox_Label": false,
+        "checkBox_Outline": true,
+        "checkBox_Underline": false,
+        "checkBox_Visible": true,
+        "colorButton_BgColor": [
+          255,
+          255,
+          255,
+          176
+        ],
+        "colorButton_ConnColor": [
+          192,
+          192,
+          208,
+          255
+        ],
+        "colorButton_Label": [
+          0,
+          0,
+          0,
+          255
+        ],
+        "colorButton_OtlColor": [
+          255,
+          255,
+          255,
+          255
+        ],
+        "comboBox_FontFamily": "sans-serif",
+        "comboBox_ObjectType": "Polygon",
+        "comboBox_altitudeMode": null,
+        "comboEdit_Color": {
+          "comboData": 1,
+          "comboText": "Feature style",
+          "editText": "",
+          "type": 2
+        },
+        "comboEdit_Color2": {
+          "comboData": null,
+          "comboText": "None",
+          "editText": "",
+          "type": 7
+        },
+        "comboEdit_FilePath": {},
+        "comboEdit_Opacity": {
+          "comboData": 1,
+          "comboText": "Feature style",
+          "editText": "",
+          "type": 5
+        },
+        "comboEdit_altitude2": {},
+        "expression_Label": "",
+        "fieldExpressionWidget_altitude": "0",
+        "geomWidget0": {},
+        "geomWidget1": {},
+        "geomWidget2": {},
+        "geomWidget3": {},
+        "geomWidget4": {},
+        "groupBox_Background": true,
+        "groupBox_Conn": true,
+        "labelHeightWidget": {
+          "comboData": 1,
+          "comboText": "Relative",
+          "editText": "50",
+          "type": 6
+        },
+        "lineEdit_Name": "",
+        "mtlWidget0": {},
+        "mtlWidget1": {},
+        "radioButton_Expression": true,
+        "radioButton_IntersectingFeatures": true,
+        "slider_FontSize": 3
+      },
+      "visible": false
+    },
+    {
+      "geomType": 3,
+      "layerId": "Plume_shell_triangles_999939da_75a2_4acf_8e21_fbb0f2b3c09c",
+      "name": "Plume shell triangles",
+      "properties": {
+        "checkBox_Clickable": true,
+        "checkBox_Clip": true,
+        "checkBox_ExportAttrs": false,
+        "checkBox_Label": false,
+        "checkBox_Outline": true,
+        "checkBox_Underline": false,
+        "checkBox_Visible": true,
+        "colorButton_BgColor": [
+          255,
+          255,
+          255,
+          176
+        ],
+        "colorButton_ConnColor": [
+          192,
+          192,
+          208,
+          255
+        ],
+        "colorButton_Label": [
+          0,
+          0,
+          0,
+          255
+        ],
+        "colorButton_OtlColor": [
+          255,
+          255,
+          255,
+          255
+        ],
+        "comboBox_FontFamily": "sans-serif",
+        "comboBox_ObjectType": "Polygon",
+        "comboBox_altitudeMode": null,
+        "comboEdit_Color": {
+          "comboData": 1,
+          "comboText": "Feature style",
+          "editText": "",
+          "type": 2
+        },
+        "comboEdit_Color2": {
+          "comboData": null,
+          "comboText": "None",
+          "editText": "",
+          "type": 7
+        },
+        "comboEdit_FilePath": {},
+        "comboEdit_Opacity": {
+          "comboData": 1,
+          "comboText": "Feature style",
+          "editText": "",
+          "type": 5
+        },
+        "comboEdit_altitude2": {},
+        "expression_Label": "\"triangle_id\"",
+        "fieldExpressionWidget_altitude": "0",
+        "geomWidget0": {},
+        "geomWidget1": {},
+        "geomWidget2": {},
+        "geomWidget3": {},
+        "geomWidget4": {},
+        "groupBox_Background": true,
+        "groupBox_Conn": true,
+        "labelHeightWidget": {
+          "comboData": 1,
+          "comboText": "Relative",
+          "editText": "50",
+          "type": 6
+        },
+        "lineEdit_Name": "",
+        "mtlWidget0": {},
+        "mtlWidget1": {},
+        "radioButton_IntersectingFeatures": true,
+        "radioButton_zValue": true,
+        "slider_FontSize": 3
+      },
+      "visible": false
+    },
+    {
+      "geomType": 3,
+      "layerId": "new_scratch_layer_9bf15405_4537_4b7e_91fa_073c7a53c170",
+      "name": "Model_extent — new_scratch_layer",
       "properties": {
         "checkBox_Clickable": true,
         "checkBox_Clip": true,
@@ -282,13 +452,6 @@
       "visible": false
     },
     {
-      "geomType": 3,
-      "layerId": "Plume_shell_triangles_68037971_f8a0_4bff_97e3_c0c566f7fa13",
-      "name": "Plume shell triangles",
-      "properties": {},
-      "visible": false
-    },
-    {
       "geomType": 1,
       "layerId": "openplumes_dummy_data_be02db33_d521_4f0b_b9f7_81d6e9869d1e",
       "name": "openplumes_dummy_data",
@@ -352,7 +515,7 @@
         "geomWidget0": {
           "comboData": null,
           "comboText": "Expression",
-          "editText": "100",
+          "editText": "15",
           "type": 1
         },
         "geomWidget1": {},

@@ -340,8 +340,24 @@ class OpenPlumesAlgorithm(QgsProcessingAlgorithm):
                 "Missing required input fields: " + ", ".join(missing_fields)
             )
 
-        feedback.pushInfo(f"Model extent: {model_extent.toString()}")
-        feedback.pushInfo(f"Input CRS: {source.sourceCrs().authid()}")
+        # Internal modeling CRS for the prototype.
+        # UTM Zone 13N uses meters and is appropriate for the current dummy dataset.
+        model_crs = QgsCoordinateReferenceSystem("EPSG:32613")
+
+        source_crs = source.sourceCrs()
+
+        if not source_crs.isValid():
+            raise QgsProcessingException("Input layer has an invalid CRS.")
+
+        to_model_crs = QgsCoordinateTransform(
+            source_crs,
+            model_crs,
+            context.transformContext(),
+        )
+
+        feedback.pushInfo(f"Input CRS: {source_crs.authid()}")
+        feedback.pushInfo(f"Modeling CRS: {model_crs.authid()}")
+
 
         interpolation_points = []
         for current, feature in enumerate(source.getFeatures()):
@@ -356,12 +372,18 @@ class OpenPlumesAlgorithm(QgsProcessingAlgorithm):
                 continue
 
             point = geometry.asPoint()
+
+            projected_point = to_model_crs.transform(
+                QgsPointXY(point.x(), point.y())
+            )
+
             row = np.array([
-                point.x(),
-                point.y(),
+                projected_point.x(),
+                projected_point.y(),
                 feature["Z"] - feature["Depth"],
                 feature[contaminant],
             ], dtype=float)
+
             if not np.isfinite(row).all():
                 feedback.pushWarning(
                     f"Skipped feature {feature.id()}: non-finite sample data."
@@ -403,6 +425,18 @@ class OpenPlumesAlgorithm(QgsProcessingAlgorithm):
         prediction_points = np.column_stack((
             grid_x.ravel(), grid_y.ravel(), grid_z.ravel(),
         ))
+
+        feedback.pushInfo(
+            f"Sample Z range: "
+            f"{sample_data[:, 2].min():.2f} to "
+            f"{sample_data[:, 2].max():.2f}"
+        )
+
+        feedback.pushInfo(
+            f"Grid Z range: "
+            f"{grid_z.min():.2f} to "
+            f"{grid_z.max():.2f}"
+        )
 
         feedback.pushInfo(f"Valid samples (XYZC): {sample_data.shape}")
         feedback.pushInfo(f"Prediction grid: {grid_x.shape}")
@@ -457,7 +491,7 @@ class OpenPlumesAlgorithm(QgsProcessingAlgorithm):
             context,
             output_fields,
             QgsWkbTypes.PolygonZ,
-            source.sourceCrs(),
+            model_crs,
         )
         if sink is None:
             raise QgsProcessingException("Could not create plume shell output.")
