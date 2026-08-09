@@ -443,9 +443,17 @@ class OpenPlumesAlgorithm(QgsProcessingAlgorithm):
         feedback.pushInfo(f"Prediction locations: {prediction_points.shape}")
 
         try:
+            neighbor_num = 8
             rbf = RBFInterpolator(
                 sample_data[:, :3], sample_data[:, 3],
-                kernel="thin_plate_spline", neighbors=5
+                #kernel="thin_plate_spline", neighbors=8
+                #kernel='linear', neighbors=neighbor_num
+                #kernel='cubic', neighbors=neighbor_num
+                #kernel='quintic', neighbors=neighbor_num
+                #kernel='multiquadric', neighbors=neighbor_num
+                #kernel='inverse_multiquadric', neighbors=neighbor_num
+                #kernel='inverse_quadratic', neighbors=neighbor_num
+                kernel='gaussian', neighbors=neighbor_num
             )
 
             predicted_values = rbf(prediction_points)
