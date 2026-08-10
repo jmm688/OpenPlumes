@@ -444,15 +444,16 @@ class OpenPlumesAlgorithm(QgsProcessingAlgorithm):
 
         try:
             neighbor_num = 8
+            epsilon_num = 100.0
             rbf = RBFInterpolator(
                 sample_data[:, :3], sample_data[:, 3],
                 #kernel="thin_plate_spline", neighbors=8
                 #kernel='linear', neighbors=neighbor_num
                 #kernel='cubic', neighbors=neighbor_num
                 #kernel='quintic', neighbors=neighbor_num
-                #kernel='multiquadric', neighbors=neighbor_num
-                #kernel='inverse_multiquadric', neighbors=neighbor_num
-                #kernel='inverse_quadratic', neighbors=neighbor_num
+                #kernel='multiquadric', neighbors=neighbor_num, epsilon=epsilon_num
+                #kernel='inverse_multiquadric', neighbors=neighbor_num, epsilon=epsilon_num
+                #kernel='inverse_quadratic', neighbors=neighbor_num, epsilon=epsilon_num
                 kernel='gaussian', neighbors=neighbor_num
             )
 
