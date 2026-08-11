@@ -4,27 +4,27 @@
       "tracks": []
     },
     "layers": {
-      "Plume_shell_triangles_1300ff15_ee09_4831_a4ed_eb980df88fb1": {
+      "Plume_shell_triangles_5de07d58_91ab_4384_98a9_a2f70fbc2ede": {
         "enabled": true,
         "tracks": []
       },
-      "Plume_shell_triangles_27547cf9_d84d_47db_b178_ea40c24cf3a2": {
+      "Plume_shell_triangles_8ac0d762_6b8f_46e6_8bde_3703e283c69e": {
         "enabled": true,
         "tracks": []
       },
-      "Plume_shell_triangles_73c9e0ad_3a9e_42b5_b063_114cee780b55": {
+      "Plume_shell_triangles_ca0734a7_4e00_4d14_8013_9b744fcb0d41": {
         "enabled": true,
         "tracks": []
       },
-      "Plume_shell_triangles_7bf74c76_ed95_4baf_8748_be4e4d5e5f1f": {
+      "Plume_shell_triangles_e0caa7bc_ae6e_4a14_8f16_8b71d63fc604": {
         "enabled": true,
         "tracks": []
       },
-      "Plume_shell_triangles_a62d887c_7b12_4631_8bec_d6d198cd141c": {
+      "Plume_shell_triangles_f2089f9c_516a_4223_902e_4ad4f8020e4d": {
         "enabled": true,
         "tracks": []
       },
-      "Plume_shell_triangles_f05bb2c5_7be9_45a4_a29a_e89ecdcf4099": {
+      "Plume_shell_triangles_f6f52b45_e5a1_4931_8ab3_56f8e981cf9b": {
         "enabled": true,
         "tracks": []
       },
@@ -32,11 +32,15 @@
         "enabled": true,
         "tracks": []
       },
-      "new_scratch_layer_6e5da56b_2f99_4cd6_9574_86773bbc5362": {
+      "new_scratch_layer_9bf15405_4537_4b7e_91fa_073c7a53c170": {
         "enabled": true,
         "tracks": []
       },
       "openplumes_dummy_data_be02db33_d521_4f0b_b9f7_81d6e9869d1e": {
+        "enabled": true,
+        "tracks": []
+      },
+      "test_extent_482037a9_890b_4680_a4e6_833e72489b59": {
         "enabled": true,
         "tracks": []
       }
@@ -46,7 +50,7 @@
   "LAYERS": [
     {
       "geomType": 3,
-      "layerId": "Plume_shell_triangles_27547cf9_d84d_47db_b178_ea40c24cf3a2",
+      "layerId": "Plume_shell_triangles_f6f52b45_e5a1_4931_8ab3_56f8e981cf9b",
       "name": "plume_500",
       "properties": {
         "checkBox_Clickable": true,
@@ -125,11 +129,11 @@
         "radioButton_zValue": true,
         "slider_FontSize": 3
       },
-      "visible": true
+      "visible": false
     },
     {
       "geomType": 3,
-      "layerId": "Plume_shell_triangles_f05bb2c5_7be9_45a4_a29a_e89ecdcf4099",
+      "layerId": "Plume_shell_triangles_e0caa7bc_ae6e_4a14_8f16_8b71d63fc604",
       "name": "plume_250",
       "properties": {
         "checkBox_Clickable": true,
@@ -212,7 +216,7 @@
     },
     {
       "geomType": 3,
-      "layerId": "Plume_shell_triangles_7bf74c76_ed95_4baf_8748_be4e4d5e5f1f",
+      "layerId": "Plume_shell_triangles_ca0734a7_4e00_4d14_8013_9b744fcb0d41",
       "name": "plume_200",
       "properties": {
         "checkBox_Clickable": true,
@@ -295,7 +299,7 @@
     },
     {
       "geomType": 3,
-      "layerId": "Plume_shell_triangles_a62d887c_7b12_4631_8bec_d6d198cd141c",
+      "layerId": "Plume_shell_triangles_5de07d58_91ab_4384_98a9_a2f70fbc2ede",
       "name": "plume_150",
       "properties": {
         "checkBox_Clickable": true,
@@ -378,91 +382,8 @@
     },
     {
       "geomType": 3,
-      "layerId": "Plume_shell_triangles_73c9e0ad_3a9e_42b5_b063_114cee780b55",
+      "layerId": "Plume_shell_triangles_f2089f9c_516a_4223_902e_4ad4f8020e4d",
       "name": "plume_100",
-      "properties": {
-        "checkBox_Clickable": true,
-        "checkBox_Clip": true,
-        "checkBox_ExportAttrs": false,
-        "checkBox_Label": false,
-        "checkBox_Outline": true,
-        "checkBox_Underline": false,
-        "checkBox_Visible": true,
-        "colorButton_BgColor": [
-          255,
-          255,
-          255,
-          176
-        ],
-        "colorButton_ConnColor": [
-          192,
-          192,
-          208,
-          255
-        ],
-        "colorButton_Label": [
-          0,
-          0,
-          0,
-          255
-        ],
-        "colorButton_OtlColor": [
-          255,
-          255,
-          255,
-          255
-        ],
-        "comboBox_FontFamily": "sans-serif",
-        "comboBox_ObjectType": "Polygon",
-        "comboBox_altitudeMode": null,
-        "comboEdit_Color": {
-          "comboData": 1,
-          "comboText": "Feature style",
-          "editText": "",
-          "type": 2
-        },
-        "comboEdit_Color2": {
-          "comboData": null,
-          "comboText": "None",
-          "editText": "",
-          "type": 7
-        },
-        "comboEdit_FilePath": {},
-        "comboEdit_Opacity": {
-          "comboData": 1,
-          "comboText": "Feature style",
-          "editText": "",
-          "type": 5
-        },
-        "comboEdit_altitude2": {},
-        "expression_Label": "\"triangle_id\"",
-        "fieldExpressionWidget_altitude": "0",
-        "geomWidget0": {},
-        "geomWidget1": {},
-        "geomWidget2": {},
-        "geomWidget3": {},
-        "geomWidget4": {},
-        "groupBox_Background": true,
-        "groupBox_Conn": true,
-        "labelHeightWidget": {
-          "comboData": 1,
-          "comboText": "Relative",
-          "editText": "50",
-          "type": 6
-        },
-        "lineEdit_Name": "",
-        "mtlWidget0": {},
-        "mtlWidget1": {},
-        "radioButton_IntersectingFeatures": true,
-        "radioButton_zValue": true,
-        "slider_FontSize": 3
-      },
-      "visible": true
-    },
-    {
-      "geomType": 3,
-      "layerId": "Plume_shell_triangles_1300ff15_ee09_4831_a4ed_eb980df88fb1",
-      "name": "plume_50",
       "properties": {
         "checkBox_Clickable": true,
         "checkBox_Clip": true,
@@ -544,8 +465,8 @@
     },
     {
       "geomType": 3,
-      "layerId": "new_scratch_layer_6e5da56b_2f99_4cd6_9574_86773bbc5362",
-      "name": "small_extent — new_scratch_layer",
+      "layerId": "Plume_shell_triangles_8ac0d762_6b8f_46e6_8bde_3703e283c69e",
+      "name": "plume_50",
       "properties": {
         "checkBox_Clickable": true,
         "checkBox_Clip": true,
@@ -584,24 +505,24 @@
         "comboEdit_Color": {
           "comboData": 1,
           "comboText": "Feature style",
-          "editText": "\"fid\"",
+          "editText": "",
           "type": 2
         },
         "comboEdit_Color2": {
           "comboData": null,
           "comboText": "None",
-          "editText": "\"fid\"",
+          "editText": "",
           "type": 7
         },
         "comboEdit_FilePath": {},
         "comboEdit_Opacity": {
           "comboData": 1,
           "comboText": "Feature style",
-          "editText": "\"fid\"",
+          "editText": "",
           "type": 5
         },
         "comboEdit_altitude2": {},
-        "expression_Label": "\"fid\"",
+        "expression_Label": "\"triangle_id\"",
         "fieldExpressionWidget_altitude": "0",
         "geomWidget0": {},
         "geomWidget1": {},
@@ -619,10 +540,24 @@
         "lineEdit_Name": "",
         "mtlWidget0": {},
         "mtlWidget1": {},
-        "radioButton_Expression": true,
         "radioButton_IntersectingFeatures": true,
+        "radioButton_zValue": true,
         "slider_FontSize": 3
       },
+      "visible": true
+    },
+    {
+      "geomType": 3,
+      "layerId": "test_extent_482037a9_890b_4680_a4e6_833e72489b59",
+      "name": "test extent",
+      "properties": {},
+      "visible": false
+    },
+    {
+      "geomType": 3,
+      "layerId": "new_scratch_layer_9bf15405_4537_4b7e_91fa_073c7a53c170",
+      "name": "Model_extent — new_scratch_layer",
+      "properties": {},
       "visible": false
     },
     {
