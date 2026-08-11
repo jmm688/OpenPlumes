@@ -452,8 +452,8 @@ class OpenPlumesAlgorithm(QgsProcessingAlgorithm):
                 #kernel='cubic', neighbors=neighbor_num
                 #kernel='quintic', neighbors=neighbor_num
                 #kernel='multiquadric', neighbors=neighbor_num, epsilon=epsilon_num
-                #kernel='inverse_multiquadric', neighbors=neighbor_num, epsilon=epsilon_num
-                kernel='inverse_quadratic', neighbors=neighbor_num, epsilon=epsilon_num
+                kernel='inverse_multiquadric', neighbors=neighbor_num, epsilon=epsilon_num
+                #kernel='inverse_quadratic', neighbors=neighbor_num, epsilon=epsilon_num
                 #kernel='gaussian', neighbors=neighbor_num
             )
 
