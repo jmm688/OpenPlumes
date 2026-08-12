@@ -461,6 +461,34 @@ class OpenPlumesAlgorithm(QgsProcessingAlgorithm):
                 #kernel='gaussian', neighbors=neighbor_num
             )
 
+
+
+# ---------------------------------------------------------
+# DEBUG: Profile between MW-01 and MW-02
+# ---------------------------------------------------------
+
+            t = np.linspace(0.0, 1.0, 25)
+
+            start = sample_data[0, :3]
+            end = sample_data[1, :3]
+
+            profile_points = start + t[:, None] * (end - start)
+
+            profile_values = rbf(profile_points)
+
+            feedback.pushInfo("MW-01 → MW-02 profile:")
+
+            for fraction, value in zip(t, profile_values):
+                feedback.pushInfo(
+                    f"{fraction:5.2f}  {value:8.2f}"
+                )
+
+            feedback.pushInfo(
+                f"Profile range: "
+                f"{profile_values.min():.2f} to "
+                f"{profile_values.max():.2f}"
+            )
+
             predicted_values = rbf(prediction_points)
             predicted_at_samples = rbf(sample_data[:, :3])
 

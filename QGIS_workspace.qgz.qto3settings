@@ -4,27 +4,7 @@
       "tracks": []
     },
     "layers": {
-      "Plume_shell_triangles_577260ac_f41b_48e1_93b3_799ae0e6949a": {
-        "enabled": true,
-        "tracks": []
-      },
-      "Plume_shell_triangles_84c04847_e913_40c0_bf5f_32282c1475d2": {
-        "enabled": true,
-        "tracks": []
-      },
-      "Plume_shell_triangles_876c2404_1879_45f7_a140_b8342180dc16": {
-        "enabled": true,
-        "tracks": []
-      },
-      "Plume_shell_triangles_9829bb2a_57e2_4072_a645_e16f447ad31f": {
-        "enabled": true,
-        "tracks": []
-      },
-      "Plume_shell_triangles_ebdfeead_6faa_457e_9dfc_a3de05f09d16": {
-        "enabled": true,
-        "tracks": []
-      },
-      "Plume_shell_triangles_ed876395_3330_4315_8636_f4aaae860842": {
+      "Plume_shell_triangles_cd4e00ef_5072_4473_9e5f_fc4bd3056dca": {
         "enabled": true,
         "tracks": []
       },
@@ -50,8 +30,8 @@
   "LAYERS": [
     {
       "geomType": 3,
-      "layerId": "Plume_shell_triangles_9829bb2a_57e2_4072_a645_e16f447ad31f",
-      "name": "plume_1000",
+      "layerId": "Plume_shell_triangles_cd4e00ef_5072_4473_9e5f_fc4bd3056dca",
+      "name": "Plume shell triangles",
       "properties": {
         "checkBox_Clickable": true,
         "checkBox_Clip": true,
@@ -133,36 +113,15 @@
     },
     {
       "geomType": 3,
-      "layerId": "Plume_shell_triangles_84c04847_e913_40c0_bf5f_32282c1475d2",
-      "name": "plume_900",
+      "layerId": "test_extent_482037a9_890b_4680_a4e6_833e72489b59",
+      "name": "test extent",
       "properties": {},
       "visible": false
     },
     {
       "geomType": 3,
-      "layerId": "Plume_shell_triangles_ed876395_3330_4315_8636_f4aaae860842",
-      "name": "plume_800",
-      "properties": {},
-      "visible": false
-    },
-    {
-      "geomType": 3,
-      "layerId": "Plume_shell_triangles_ebdfeead_6faa_457e_9dfc_a3de05f09d16",
-      "name": "plume_700",
-      "properties": {},
-      "visible": false
-    },
-    {
-      "geomType": 3,
-      "layerId": "Plume_shell_triangles_876c2404_1879_45f7_a140_b8342180dc16",
-      "name": "plume_600",
-      "properties": {},
-      "visible": false
-    },
-    {
-      "geomType": 3,
-      "layerId": "Plume_shell_triangles_577260ac_f41b_48e1_93b3_799ae0e6949a",
-      "name": "plume_500",
+      "layerId": "new_scratch_layer_9bf15405_4537_4b7e_91fa_073c7a53c170",
+      "name": "Model_extent — new_scratch_layer",
       "properties": {},
       "visible": false
     },
@@ -253,20 +212,6 @@
         "slider_FontSize": 3
       },
       "visible": true
-    },
-    {
-      "geomType": 3,
-      "layerId": "test_extent_482037a9_890b_4680_a4e6_833e72489b59",
-      "name": "test extent",
-      "properties": {},
-      "visible": false
-    },
-    {
-      "geomType": 3,
-      "layerId": "new_scratch_layer_9bf15405_4537_4b7e_91fa_073c7a53c170",
-      "name": "Model_extent — new_scratch_layer",
-      "properties": {},
-      "visible": false
     },
     {
       "geomType": 0,
