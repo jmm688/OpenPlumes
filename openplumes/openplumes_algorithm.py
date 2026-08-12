@@ -376,7 +376,11 @@ class OpenPlumesAlgorithm(QgsProcessingAlgorithm):
             projected_point = to_model_crs.transform(
                 QgsPointXY(point.x(), point.y())
             )
-
+            feedback.pushInfo(
+                f"{feature['Well_ID']}: "
+                f"original=({point.x():.6f}, {point.y():.6f}) "
+                f"projected=({projected_point.x():.2f}, {projected_point.y():.2f})"
+            )
             row = np.array([
                 projected_point.x(),
                 projected_point.y(),
@@ -458,6 +462,13 @@ class OpenPlumesAlgorithm(QgsProcessingAlgorithm):
             )
 
             predicted_values = rbf(prediction_points)
+            predicted_at_samples = rbf(sample_data[:, :3])
+
+            feedback.pushInfo(
+                f"Max interpolation error: "
+                f"{np.max(np.abs(predicted_at_samples - sample_data[:, 3])):.6f}"
+            )
+
         except (ValueError, np.linalg.LinAlgError) as error:
             raise QgsProcessingException(
                 f"RBF interpolation failed: {error}"
