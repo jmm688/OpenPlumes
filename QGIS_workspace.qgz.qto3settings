@@ -4,11 +4,15 @@
       "tracks": []
     },
     "layers": {
-      "Plume_shell_triangles_350e16d9_c790_4a73_a942_66d323140601": {
+      "Plume_shell_triangles_aa5bc582_ab0d_49ba_a245_7bd38cc80791": {
         "enabled": true,
         "tracks": []
       },
-      "Plume_shell_triangles_3e21828e_122b_4723_a61c_af611b2324bd": {
+      "Plume_shell_triangles_de98dc8d_ae82_4f53_9aa1_fdee94393d22": {
+        "enabled": true,
+        "tracks": []
+      },
+      "Plume_shell_triangles_f69e820e_29d7_4d7e_9b1c_c90efc8dfc0b": {
         "enabled": true,
         "tracks": []
       },
@@ -16,7 +20,7 @@
         "enabled": true,
         "tracks": []
       },
-      "new_scratch_layer_9ff85734_ff74_4b31_a865_48035b0c96ca": {
+      "new_scratch_layer_0c4a81bb_9560_4ffb_babe_30a67accf627": {
         "enabled": true,
         "tracks": []
       },
@@ -30,7 +34,7 @@
   "LAYERS": [
     {
       "geomType": 3,
-      "layerId": "Plume_shell_triangles_350e16d9_c790_4a73_a942_66d323140601",
+      "layerId": "Plume_shell_triangles_f69e820e_29d7_4d7e_9b1c_c90efc8dfc0b",
       "name": "Plume shell triangles",
       "properties": {
         "checkBox_Clickable": true,
@@ -113,7 +117,7 @@
     },
     {
       "geomType": 3,
-      "layerId": "Plume_shell_triangles_3e21828e_122b_4723_a61c_af611b2324bd",
+      "layerId": "Plume_shell_triangles_aa5bc582_ab0d_49ba_a245_7bd38cc80791",
       "name": "Plume shell triangles",
       "properties": {
         "checkBox_Clickable": true,
@@ -196,7 +200,90 @@
     },
     {
       "geomType": 3,
-      "layerId": "new_scratch_layer_9ff85734_ff74_4b31_a865_48035b0c96ca",
+      "layerId": "Plume_shell_triangles_de98dc8d_ae82_4f53_9aa1_fdee94393d22",
+      "name": "Plume shell triangles",
+      "properties": {
+        "checkBox_Clickable": true,
+        "checkBox_Clip": true,
+        "checkBox_ExportAttrs": false,
+        "checkBox_Label": false,
+        "checkBox_Outline": true,
+        "checkBox_Underline": false,
+        "checkBox_Visible": true,
+        "colorButton_BgColor": [
+          255,
+          255,
+          255,
+          176
+        ],
+        "colorButton_ConnColor": [
+          192,
+          192,
+          208,
+          255
+        ],
+        "colorButton_Label": [
+          0,
+          0,
+          0,
+          255
+        ],
+        "colorButton_OtlColor": [
+          255,
+          255,
+          255,
+          255
+        ],
+        "comboBox_FontFamily": "sans-serif",
+        "comboBox_ObjectType": "Polygon",
+        "comboBox_altitudeMode": null,
+        "comboEdit_Color": {
+          "comboData": 1,
+          "comboText": "Feature style",
+          "editText": "",
+          "type": 2
+        },
+        "comboEdit_Color2": {
+          "comboData": null,
+          "comboText": "None",
+          "editText": "",
+          "type": 7
+        },
+        "comboEdit_FilePath": {},
+        "comboEdit_Opacity": {
+          "comboData": 1,
+          "comboText": "Feature style",
+          "editText": "",
+          "type": 5
+        },
+        "comboEdit_altitude2": {},
+        "expression_Label": "\"triangle_id\"",
+        "fieldExpressionWidget_altitude": "0",
+        "geomWidget0": {},
+        "geomWidget1": {},
+        "geomWidget2": {},
+        "geomWidget3": {},
+        "geomWidget4": {},
+        "groupBox_Background": true,
+        "groupBox_Conn": true,
+        "labelHeightWidget": {
+          "comboData": 1,
+          "comboText": "Relative",
+          "editText": "50",
+          "type": 6
+        },
+        "lineEdit_Name": "",
+        "mtlWidget0": {},
+        "mtlWidget1": {},
+        "radioButton_IntersectingFeatures": true,
+        "radioButton_zValue": true,
+        "slider_FontSize": 3
+      },
+      "visible": false
+    },
+    {
+      "geomType": 3,
+      "layerId": "new_scratch_layer_0c4a81bb_9560_4ffb_babe_30a67accf627",
       "name": "small_extent — new_scratch_layer",
       "properties": {},
       "visible": false
