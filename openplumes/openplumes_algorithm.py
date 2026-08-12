@@ -422,9 +422,9 @@ class OpenPlumesAlgorithm(QgsProcessingAlgorithm):
         z_bottom = 0.0
         z_top = 100.0
         grid_x, grid_y, grid_z = np.mgrid[
-            x_min:x_max:20j,
-            y_min:y_max:20j,
-            z_bottom:z_top:20j,
+            x_min:x_max:50j,
+            y_min:y_max:50j,
+            z_bottom:z_top:50j,
         ]
         prediction_points = np.column_stack((
             grid_x.ravel(), grid_y.ravel(), grid_z.ravel(),
@@ -447,16 +447,16 @@ class OpenPlumesAlgorithm(QgsProcessingAlgorithm):
         feedback.pushInfo(f"Prediction locations: {prediction_points.shape}")
 
         try:
-            neighbor_num = 8
-            epsilon_num = 0.09
+            neighbor_num = 9
+            epsilon_num = 1
             rbf = RBFInterpolator(
                 sample_data[:, :3], sample_data[:, 3],
-                #kernel="thin_plate_spline", neighbors=8
+                kernel="thin_plate_spline", neighbors=8
                 #kernel='linear', neighbors=neighbor_num
                 #kernel='cubic', neighbors=neighbor_num
                 #kernel='quintic', neighbors=neighbor_num
                 #kernel='multiquadric', neighbors=neighbor_num, epsilon=epsilon_num
-                kernel='inverse_multiquadric', neighbors=neighbor_num, epsilon=epsilon_num
+                #kernel='inverse_multiquadric', neighbors=neighbor_num, epsilon=epsilon_num
                 #kernel='inverse_quadratic', neighbors=neighbor_num, epsilon=epsilon_num
                 #kernel='gaussian', neighbors=neighbor_num
             )
