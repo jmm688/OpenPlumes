@@ -3,5 +3,5 @@ OpenPlumes is an open-source platform for probabilistic groundwater plume modeli
 
 The project aims to combine Gaussian Processes, hydrogeologic knowledge, and uncertainty quantification into an accessible, open-source toolkit for groundwater professionals. While the initial focus is on plume interpolation and visualization, my hope is that in the long-term it will provide advanced capabilities for physics-aware modeling, uncertainty analysis, monitoring network optimization, and future research in hybrid physics and machine learning approaches.
 
-updated example of plume
+### Updated example of plume:
 https://jmm688.github.io/scene-export%20(11).html
