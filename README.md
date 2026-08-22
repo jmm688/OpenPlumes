@@ -5,3 +5,4 @@ The project aims to combine Gaussian Processes, hydrogeologic knowledge, and unc
 
 ### Updated example of plume:
 https://jmm688.github.io/scene-export%20(11).html
+https://github.com/jmm688/jmm688.github.io/blob/main/scene-export%20(13).html
