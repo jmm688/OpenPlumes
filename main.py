@@ -25,12 +25,15 @@ from engine.profiles import generate_nearest_neighbor_profiles
 from engine.plot import generate_scene
 
 def main():
+    project_root = Path(__file__).resolve().parent
+    examples_directory = project_root / "Examples"
     #Defining path to file
-    path = "/mnt/c/Users/josem/OneDrive/Documents/Dummy_data/new_dummy_data3.csv" # r'/path' for windows
+    #path = "/mnt/c/Users/josem/OneDrive/Documents/Dummy_data/new_dummy_data3.csv" # r'/path' for windows
+    path = examples_directory / "new_dummy_data3.csv"
     df = pd.read_csv(path)
 
     # File path for the model domain which will be used later
-    boundary_path = ("/mnt/c/Users/josem/OneDrive/Documents/Dummy_data/model_domain/shape_file/model_domain_2/model_domain_2.shp")
+    boundary_path = (examples_directory / "model_domain_2" / "model_domain_2.shp")
 
     source_crs = "EPSG:4326"
     model_crs = "EPSG:32619"
