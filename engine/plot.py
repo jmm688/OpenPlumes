@@ -9,11 +9,11 @@ def generate_well_plot(plotter, pdata, cmap,color_limits,grid,contaminant_of_con
 )
     return plotter
 
-def generate_isosurfaces_plot(plotter,isosurface_list,color_limits,cmap,contaminant_of_concern):
-    iso = grid.contour(isosurfaces=isosurface_list, scalars=contaminant)
-    plotter.add_mesh(iso, scalars=contaminant, cmap=cmap,
+def generate_isosurfaces_plot(plotter,isosurface_list,color_limits,cmap,contaminant_of_concern,grid):
+    iso = grid.contour(isosurfaces=isosurface_list, scalars=contaminant_of_concern)
+    plotter.add_mesh(iso, scalars=contaminant_of_concern, cmap=cmap,
                          clim=color_limits, show_edges=True,
-                         opacity=0.70, scalar_bar_args={"title": contaminant},
+                         opacity=0.70, scalar_bar_args={"title": contaminant_of_concern, "vertical": True, "title_font_size": 12, "label_font_size": 10},
 )
     return plotter
 
@@ -86,7 +86,7 @@ def generate_scene(
     if isosurface_list is not None:
         plotter = generate_isosurfaces_plot(
             plotter=plotter,
-            #grid=grid,
+            grid=grid,
             isosurface_list=isosurface_list,
             contaminant_of_concern=contaminant_of_concern,
             cmap=cmap,
