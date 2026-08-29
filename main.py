@@ -28,7 +28,6 @@ def main():
     project_root = Path(__file__).resolve().parent
     examples_directory = project_root / "Examples"
     #Defining path to file
-    #path = "/mnt/c/Users/josem/OneDrive/Documents/Dummy_data/new_dummy_data3.csv" # r'/path' for windows
     path = examples_directory / "new_dummy_data3.csv"
     df = pd.read_csv(path)
 
