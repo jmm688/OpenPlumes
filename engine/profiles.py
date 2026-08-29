@@ -1,9 +1,9 @@
 import numpy as np
 
-def get_k_profile_points(well_a, nearest_k, nearest_dist, points):
+def get_k_profile_points(well_a, data_, nearest_k, nearest_dist, points):
     t = np.linspace(0, 1, points)
     export = {}
-    well_data_a = df.loc[df["Well_ID"] == well_a]
+    well_data_a = data_.loc[data_["Well_ID"] == well_a]
     
     xa = well_data_a["X"].to_numpy()[0]
     ya = well_data_a["Y"].to_numpy()[0]
@@ -14,7 +14,7 @@ def get_k_profile_points(well_a, nearest_k, nearest_dist, points):
     
     for well, dist in zip(nearest_k, nearest_dist):
         # getting end point (nearest neighbor)
-        well_data_b = df.loc[df["Well_ID"] == well]
+        well_data_b = data_.loc[data_["Well_ID"] == well]
     
         xb = well_data_b["X"].to_numpy()[0]
         yb = well_data_b["Y"].to_numpy()[0]
@@ -38,10 +38,10 @@ def predict_profile_points(model, profile_dict, neighbors):
     
     return scalar_dict
 
-def generate_nearest_neighbor_profiles(well, k_neighbors=1, points_per_profile=50):
+def generate_nearest_neighbor_profiles(well, data_, dist_matrix, k_neighbors=1, points_per_profile=50, model_fit=None):
     well_of_choice = well
     ordered_distances = ( 
-        distance_df.loc[well_of_choice].drop(well_of_choice) # getting distances to well of choice and removing itself
+        dist_matrix.loc[well_of_choice].drop(well_of_choice) # getting distances to well of choice and removing itself
         .sort_values() # sorting by numerical values so we have order of nearest neighbors
                     )
     # extracting the names of those wells
@@ -54,9 +54,10 @@ def generate_nearest_neighbor_profiles(well, k_neighbors=1, points_per_profile=5
     neighbor_distances = nearest.to_numpy()
 
     profile_points =  get_k_profile_points(well_of_choice,
-                                           neighbor_names,
-                                           neighbor_distances,
-                                           points_per_profile)
+                                           data_= data_,
+                                           nearest_k = neighbor_names,
+                                           nearest_dist = neighbor_distances,
+                                           points = points_per_profile)
 
     profile_predict = predict_profile_points(model_fit, profile_points, neighbor_names)
 
