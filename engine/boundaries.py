@@ -3,6 +3,82 @@ from pathlib import Path
 import geopandas as gpd
 import numpy as np
 
+
+# validating to make sure bounds are in the correct format
+def validate_bounds(bounds):
+    """Validate and return six numeric 3D domain bounds."""
+    expected_format = ("[x_min, x_max, y_min, y_max, z_min, z_max]")
+
+    if not isinstance(bounds, (list, tuple, np.ndarray)):
+        raise TypeError(
+            "Manual domain bounds must be supplied as a list, "
+            "tuple, or NumPy array.\n"
+            f"Received type: {type(bounds).__name__}\n"
+            f"Expected format: {expected_format}\n"
+            "Example: [445020, 445180, 4046750, 4046910, -110, -20]"
+        )
+    if len(bounds) != 6:
+        raise ValueError(
+            "Manual domain bounds require exactly six values.\n"
+            f"Received {len(bounds)} values: {bounds}\n"
+            f"Expected format: {expected_format}"
+        )
+    invalid_values = [value for value in bounds if not isinstance(value, (int, float, np.number))]
+
+    if invalid_values:
+        raise TypeError(
+            "Every domain-bound value must be numeric.\n"
+            f"Invalid values: {invalid_values}\n"
+            f"Received bounds: {bounds}\n"
+            f"Expected format: {expected_format}"
+        )
+
+    bounds = np.asarray(bounds, dtype=float)
+
+    if not np.isfinite(bounds).all():
+        invalid_positions = np.flatnonzero(
+            ~np.isfinite(bounds)
+        ).tolist()
+        raise ValueError(
+            "Domain bounds contain NaN or infinite values.\n"
+            f"Invalid positions: {invalid_positions}\n"
+            f"Received bounds: {bounds.tolist()}"
+        )
+    x_min, x_max, y_min, y_max, z_min, z_max = bounds
+
+    if x_min >= x_max:
+        raise ValueError(
+            "Invalid X bounds.\n"
+            f"Received x_min={x_min:g} and x_max={x_max:g}.\n"
+            "x_min must be smaller than x_max.\n"
+            f"Expected format: {expected_format}"
+        )
+    if y_min >= y_max:
+        raise ValueError(
+            "Invalid Y bounds.\n"
+            f"Received y_min={y_min:g} and y_max={y_max:g}.\n"
+            "y_min must be smaller than y_max.\n"
+            f"Expected format: {expected_format}"
+        )
+    if z_min >= z_max:
+        raise ValueError(
+            "Invalid Z bounds.\n"
+            f"Received z_min={z_min:g} and z_max={z_max:g}.\n"
+            "z_min must be smaller than z_max.\n"
+            "If depth is represented as negative Z, a valid example "
+            "is z_min=-110 and z_max=-20."
+        )
+
+    return {
+        "x_min": float(x_min),
+        "x_max": float(x_max),
+        "y_min": float(y_min),
+        "y_max": float(y_max),
+        "z_min": float(z_min),
+        "z_max": float(z_max),
+    }
+
+
 def domain_bounds_from_values(boundaries):
     """Create domain bounds from six manually supplied values."""
     return validate_bounds(boundaries)
