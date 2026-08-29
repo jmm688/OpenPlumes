@@ -16,8 +16,8 @@ The standalone workflow currently supports:
 - fitting a SciPy radial basis function interpolator;
 - predicting contaminant concentrations throughout the grid;
 - extracting concentration isosurfaces;
-- generating nearest-neighbor concentration profiles; and
-- displaying the results interactively with PyVista.
+- generating nearest-neighbor concentration profiles;
+- and displaying the results interactively with PyVista.
 
 ## Installation
 
@@ -70,8 +70,8 @@ Known limitations include:
 - predicted concentrations may become negative;
 - predictions outside the monitoring-well network are extrapolations;
 - disconnected or boundary-clipped isosurfaces may be interpolation artifacts;
-- hydrogeologic anisotropy is not yet represented explicitly; and
-- sample depth currently assumes a flat reference surface unless elevation data are supplied.
+- hydrogeologic anisotropy is not yet represented explicitly;
+- and sample depth currently assumes a flat reference surface unless elevation data are supplied.
 
 These limitations are active research topics. Scientific correctness, diagnostics, and validation against trusted libraries take priority over optimization and interface development.
 
