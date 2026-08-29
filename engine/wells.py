@@ -1,3 +1,5 @@
+import numpy as np
+
 def create_well_points(df,X ,Y ,Z):
     X, Y, Z = df['X'],df['Y'],df['depth']
 
