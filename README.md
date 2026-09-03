@@ -83,7 +83,7 @@ Jupyter notebooks are used as the research laboratory for understanding and vali
 
 - [OpenPlumes interactive plume example 1](https://jmm688.github.io/scene-export%20(11).html)
 - [OpenPlumes interactive plume example 2](https://jmm688.github.io/scene-export%20(17).html)
-- - [OpenPlumes interactive plume example 3](https://jmm688.github.io/scene-export%20(26).html)
+- [OpenPlumes interactive plume example 3](https://jmm688.github.io/scene-export%20(26).html)
 
 ## License
 
