@@ -17,6 +17,41 @@ def generate_isosurfaces_plot(plotter,isosurface_list,color_limits,cmap,contamin
 )
     return plotter
 
+def generate_terrain(plotter,path_to_dem, cmap):
+    filename = path_to_dem
+    # Read the DEM and its geographic information.
+    with rasterio.open(filename) as source:
+        elevation = source.read(
+            1,
+            masked=True,
+        ).filled(np.nan)
+    
+        transform = source.transform
+
+        rows, columns = np.indices(
+            elevation.shape
+        )
+        # Convert pixel centers into projected X/Y coordinates.
+        x = (
+            transform.c
+            + (columns + 0.5) * transform.a
+            + (rows + 0.5) * transform.b
+        )
+        y = (
+            transform.f
+            + (columns + 0.5) * transform.d
+            + (rows + 0.5) * transform.e)
+    # Move the average ground elevation to Z = 0.
+    relative_elevation = (elevation - np.nanmean(elevation))
+    # Create the geographically positioned terrain.
+    terrain = pv.StructuredGrid(x,y,relative_elevation,)
+    # Store the original elevations for coloring.
+    terrain["Elevation"] = elevation.ravel(order="F")
+    # Add the terrain before calling scene.show().
+    plotter.add_mesh(terrain, scalars="Elevation", cmap="terrain", name="DEM",)
+
+    return plotter
+
 def add_profiles_to_plot(plot, dict_profile_coordinates, dict_profile_predictions,linewidth=0.05):
     
     for neighbor in dict_profile_predictions.keys():
