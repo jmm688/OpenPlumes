@@ -114,6 +114,9 @@ def main():
         max(grid[contaminant].max(), pdata[contaminant].max()),
     )
 
+    filename = "/mnt/c/Users/josem/OneDrive/Documents/Dummy_data/DEM.tif"
+
+
     a = generate_scene(
         wells=pdata,
         grid=grid,
@@ -121,7 +124,7 @@ def main():
         isosurface_list=[0,1000],
         cmap="turbo",
         color_limits=color_limits,
-        surface_map=None,
+        surface_map=filename,
     )
 
     a.show()
