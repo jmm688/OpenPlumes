@@ -1,4 +1,6 @@
 import pyvista as pv
+import rasterio
+import numpy as np
 
 def generate_well_plot(plotter, pdata, cmap,color_limits,grid,contaminant_of_concern):
     # Add observed monitoring wells as spheres.
@@ -130,7 +132,8 @@ def generate_scene(
 
     if surface_map is not None:
         # TODO after v0.1: add optional surface-map workflow.
-        pass
+        plotter = generate_terrain(plotter,surface_map,cmap,)
+        print('we passed the dem path')
 
     return plotter
 
