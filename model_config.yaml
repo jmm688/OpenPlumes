@@ -1,0 +1,36 @@
+# OpenPlumes model configuration — future work
+#
+# Intended purpose:
+# Store model-run settings outside main.py.
+#
+# This file is currently a design placeholder.
+# main.py does not read it yet.
+
+data:
+  observations:
+  boundary:
+
+coordinates:
+  longitude_column:
+  latitude_column:
+  depth_column:
+  source_crs:
+  model_crs:
+
+model:
+  contaminant:
+  vertical_bounds:
+  grid_spacing:
+
+interpolation:
+  method:
+  kernel:
+  neighbors:
+  epsilon:
+
+# Future steps:
+# 1. Decide which settings are stable enough to move out of main.py.
+# 2. Add PyYAML to environment.yaml.
+# 3. Write a small function that reads this file.
+# 4. Connect the loaded settings to main.py.
+# 5. Add clear errors for missing required settings.
