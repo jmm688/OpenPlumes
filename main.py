@@ -63,7 +63,7 @@ def main():
     nearest_neighbors.sort_values("Distance_m") # sorting by increasing distance
 
     # Using a shapefile to determine the model boundary
-    boundary_path = ("/mnt/c/Users/josem/OneDrive/Documents/Dummy_data/model_domain/shape_file/model_domain_2/model_domain_2.shp")
+    #boundary_path = ("/mnt/c/Users/josem/OneDrive/Documents/Dummy_data/model_domain/shape_file/model_domain_2/model_domain_2.shp")
     bounds = get_domain_bounds(boundaries=boundary_path,z_bounds=(-110, -20),model_crs=model_crs,) # make sure you define mode_crs...
 
     # Generating an RBF model and fitting the wells to the model
@@ -114,7 +114,8 @@ def main():
         max(grid[contaminant].max(), pdata[contaminant].max()),
     )
 
-    filename = "/mnt/c/Users/josem/OneDrive/Documents/Dummy_data/DEM.tif"
+    #filename = "/mnt/c/Users/josem/OneDrive/Documents/Dummy_data/DEM.tif"
+    filename = examples_directory / "DEM.tif"
 
 
     a = generate_scene(
