@@ -120,7 +120,7 @@ def main():
     filename = examples_directory / "DEM.tif"
 
 
-    a = generate_scene(
+    scene = generate_scene(
         wells=pdata,
         grid=grid,
         contaminant_of_concern=contaminant,
@@ -130,7 +130,7 @@ def main():
         surface_map=filename,
     )
 
-    a.show()
+    scene.show()
 
 
 if __name__ == "__main__":
