@@ -29,6 +29,7 @@ def main():
     examples_directory = project_root / "Examples"
     #Defining path to file
     path = examples_directory / "new_dummy_data3.csv"
+    #making a pandas dataframe from the csv file
     df = pd.read_csv(path)
 
     # File path for the model domain which will be used later
@@ -39,6 +40,7 @@ def main():
     Longitude = 'long'
     Latitude = 'lat'
 
+    # projecting coordinates because rbf interpolation is not compatible with lat/long coordinates. This will add two new columns to the df called X and Y
     df = project_coordinates(df,Longitude,Latitude,source_crs,model_crs)
 
     # Defining x,y,z points using our df data and projected coordinates
